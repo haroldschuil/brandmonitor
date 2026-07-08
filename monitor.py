@@ -121,6 +121,27 @@ def firms_hotspots(cfg, map_key):
     return hotspots, fouten
 
 
+# ------------------------------------------------------------- vertaling ----
+
+def vertaal_nl(tekst):
+    """Vertaalt FR naar NL via het onofficiële Google Translate-endpoint.
+    Ongedocumenteerd en zonder garantie; bij falen komt (None, fout) terug
+    en toont de pagina de Franse kop."""
+    if not tekst.strip():
+        return None, "leeg"
+    url = ("https://translate.googleapis.com/translate_a/single"
+           "?client=gtx&sl=fr&tl=nl&dt=t&q=" + urllib.parse.quote(tekst))
+    ruw, fout = haal(url, timeout=15)
+    if fout:
+        return None, fout
+    try:
+        data = json.loads(ruw)
+        vertaald = "".join(seg[0] for seg in data[0] if seg and seg[0])
+        return (vertaald.strip() or None), None
+    except Exception as e:
+        return None, f"parsefout: {e}"
+
+
 # ----------------------------------------------------------------- feeds ----
 
 def parse_feed(xml_tekst, bronnaam):
@@ -229,6 +250,17 @@ def verzamel_nieuws(cfg):
                    "pub_lokaal": d.astimezone(TZ).strftime("%d-%m %H:%M") if d else it["pub"]})
         resultaat.append(it)
     resultaat.sort(key=lambda x: (-x["score"], x["uren_oud"] if x["uren_oud"] is not None else 999))
+
+    # alleen de getoonde koppen vertalen; scoren gebeurt op de Franse tekst
+    vertaal_fouten = 0
+    for it in resultaat[:25]:
+        if vertaal_fouten >= 3:  # endpoint werkt kennelijk niet, stoppen
+            break
+        nl, fout = vertaal_nl(it["titel"])
+        if nl and nl.lower() != it["titel"].lower():
+            it["titel_nl"] = nl
+        elif fout:
+            vertaal_fouten += 1
     return resultaat, feedstatus
 
 
@@ -393,12 +425,18 @@ def render(cfg, niveau, redenen, hotspots, nieuws, vig, w, feedstatus, firms_fou
 
     # nieuws
     if nieuws:
-        li = "".join(
-            f"<li class='{'kern' if n['vlag']['kern'] else ''}'>"
-            f"<a href='{e(n['link'])}'>{e(n['titel'])}</a>"
-            f"<span class='klein'> — {e(n['pub_lokaal'])}, score {n['score']}</span></li>"
-            for n in nieuws[:25])
-        nieuws_html = f"<ul>{li}</ul>"
+        li = ""
+        for n in nieuws[:25]:
+            kop = n.get("titel_nl") or n["titel"]
+            origineel = (f"<div class='klein'>Origineel: {e(n['titel'])}</div>"
+                         if n.get("titel_nl") else "")
+            li += (f"<li class='{'kern' if n['vlag']['kern'] else ''}'>"
+                   f"<a href='{e(n['link'])}'>{e(kop)}</a>"
+                   f"<span class='klein'> — {e(n['pub_lokaal'])}, score {n['score']}</span>"
+                   f"{origineel}</li>")
+        nieuws_html = (f"<ul>{li}</ul>"
+                       "<p class='klein'>Koppen automatisch vertaald (Google Translate); "
+                       "bij twijfel geldt het Franse origineel.</p>")
     else:
         nieuws_html = "<p>Geen brandgerelateerde berichten gevonden.</p>"
 
