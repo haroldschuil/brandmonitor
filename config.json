@@ -30,6 +30,7 @@
     {"naam": "France 3 Occitanie", "url": "https://france3-regions.franceinfo.fr/occitanie/rss", "status": "kandidaat, niet geverifieerd"}
   ],
   "trefwoorden": {
+    "uitsluitingen": ["port-vendres", "fleury-m\u00e9rogis", "fleury-merogis", "fleury-les-aubrais", "fleury-sur-orne"],
     "kern_plaatsen": ["vendres", "valras", "s\u00e9rignan", "serignan", "lespignan", "fleury", "saint-pierre-la-mer", "salles-d'aude", "nissan-lez-enserune", "cabanes de fleury"],
     "regio_plaatsen": ["b\u00e9ziers", "beziers", "narbonne", "sauvian", "villeneuve-l\u00e8s-b\u00e9ziers", "cers", "portiragnes", "colombiers", "capestang", "minervois"],
     "signaal": ["\u00e9vacuation", "\u00e9vacu\u00e9", "evacuation", "confinement", "confin\u00e9", "camping", "fermeture", "danger imm\u00e9diat"],

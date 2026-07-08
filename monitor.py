@@ -163,8 +163,12 @@ def parse_pubdate(pub):
 
 
 def score_item(tekst, kw):
-    """Gewogen score plus vlaggen, zelfde principe als Misdaad Monitor."""
+    """Gewogen score plus vlaggen, zelfde principe als Misdaad Monitor.
+    Uitsluitingen (bijv. Port-Vendres, Fleury-Mérogis) worden eerst
+    verwijderd zodat ze geen valse kernplaats-match geven."""
     t = tekst.lower()
+    for u in kw.get("uitsluitingen", []):
+        t = t.replace(u, " ")
     score = 0
     vlag = {"kern": False, "regio": False, "signaal": False, "brand": False}
     for w in kw["kern_plaatsen"]:
