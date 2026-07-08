@@ -1,0 +1,57 @@
+{
+  "_opmerking_coordinaten": "SCHATTING voor Camping Homair La Plage et le Bord de mer, Vendres-Plage. Verifieer via Google Maps (lang indrukken op de camping) en vervang deze waarden.",
+  "locatie": {
+    "naam": "Camping Homair - Plage et Bord de Mer, Vendres-Plage",
+    "lat": 43.222,
+    "lon": 3.250
+  },
+  "periode": {
+    "van": "2026-07-18",
+    "tot": "2026-08-01"
+  },
+  "stralen_km": {
+    "rood": 15,
+    "oranje": 40,
+    "geel": 80
+  },
+  "firms": {
+    "bronnen": ["VIIRS_NOAA21_NRT", "VIIRS_NOAA20_NRT", "VIIRS_SNPP_NRT", "MODIS_NRT"],
+    "dagen": 1,
+    "bbox_halfbreedte_km": 90
+  },
+  "google_news_queries": [
+    "(incendie OR feu) (Vendres OR Valras OR S\u00e9rignan OR Lespignan OR Fleury OR \"Saint-Pierre-la-Mer\" OR \"Salles-d'Aude\" OR \"Nissan-lez-Enserune\") when:2d",
+    "\"feu de for\u00eat\" H\u00e9rault when:1d",
+    "incendie (H\u00e9rault OR Aude) \u00e9vacuation when:2d",
+    "\u00e9vacuation camping (H\u00e9rault OR Aude) when:2d"
+  ],
+  "directe_feeds": [
+    {"naam": "Feux de For\u00eat (feuxdeforet.fr)", "url": "https://feuxdeforet.fr/feed/", "status": "kandidaat, niet geverifieerd"},
+    {"naam": "France 3 Occitanie", "url": "https://france3-regions.franceinfo.fr/occitanie/rss", "status": "kandidaat, niet geverifieerd"}
+  ],
+  "trefwoorden": {
+    "kern_plaatsen": ["vendres", "valras", "s\u00e9rignan", "serignan", "lespignan", "fleury", "saint-pierre-la-mer", "salles-d'aude", "nissan-lez-enserune", "cabanes de fleury"],
+    "regio_plaatsen": ["b\u00e9ziers", "beziers", "narbonne", "sauvian", "villeneuve-l\u00e8s-b\u00e9ziers", "cers", "portiragnes", "colombiers", "capestang", "minervois"],
+    "signaal": ["\u00e9vacuation", "\u00e9vacu\u00e9", "evacuation", "confinement", "confin\u00e9", "camping", "fermeture", "danger imm\u00e9diat"],
+    "brand": ["incendie", "feu de for\u00eat", "feu de v\u00e9g\u00e9tation", "d\u00e9part de feu", "hectares", "pompiers", "flammes", "vigilance rouge"]
+  },
+  "vigilance": {
+    "pagina": "https://www.risque-prevention-incendie.fr/herault/",
+    "relevante_sectoren": [6, 7],
+    "_opmerking": "Sector 7 (Plaine viticole ... Plaines littorales) is vermoedelijk de sector van Vendres, sector 6 (Minervois et Saint-Chinianais) ligt landinwaarts. Niet bevestigd: controleer eenmalig via de knop 'localisez moi' op de kaart."
+  },
+  "vaste_links": [
+    {"naam": "Vigilancekaart prefectuur H\u00e9rault (dagelijks 18u)", "url": "https://www.risque-prevention-incendie.fr/herault/"},
+    {"naam": "Prefectuur H\u00e9rault op X (@Prefet34)", "url": "https://x.com/Prefet34"},
+    {"naam": "Prefectuur Aude op X (@Prefet11)", "url": "https://x.com/Prefet11"},
+    {"naam": "Feux de For\u00eat, pagina H\u00e9rault", "url": "https://feuxdeforet.fr/occitanie/herault/"},
+    {"naam": "Gemeente Vendres", "url": "https://www.vendres.com/"},
+    {"naam": "M\u00e9t\u00e9o des for\u00eats (M\u00e9t\u00e9o-France)", "url": "https://meteofrance.com/meteo-des-forets"},
+    {"naam": "NASA FIRMS kaart (live satelliet)", "url": "https://firms.modaps.eosdis.nasa.gov/map/"}
+  ],
+  "email_alert": {
+    "actief": true,
+    "vanaf_niveau": "ORANJE",
+    "onderwerp_prefix": "[Brandmonitor Vendres]"
+  }
+}
