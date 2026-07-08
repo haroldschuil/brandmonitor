@@ -1,0 +1,40 @@
+name: Brandmonitor Vendres
+
+on:
+  schedule:
+    # Elke 2 uur. GitHub Actions cron loopt in UTC en kan tot ~15 min later starten.
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brandmonitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Monitor draaien
+        env:
+          FIRMS_MAP_KEY: ${{ secrets.FIRMS_MAP_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          PAGES_URL: ${{ vars.PAGES_URL }}
+        run: python monitor.py
+
+      - name: Resultaat committen
+        run: |
+          git config user.name "brandmonitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "Update brandmonitor $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
