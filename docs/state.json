@@ -1,8 +1,8 @@
 {
- "niveau": "GROEN",
- "tijd": "2026-07-16T15:54:37.782395+02:00",
+ "niveau": "GEEL",
+ "tijd": "2026-07-16T17:40:00.109156+02:00",
  "redenen": [
-  "Geen hotspots binnen 80 km en geen lokale brandberichten in de laatste 48 uur"
+  "Satelliet: hotspot op 74.0 km (Z)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
