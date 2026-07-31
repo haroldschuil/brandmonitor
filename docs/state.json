@@ -1,8 +1,9 @@
 {
- "niveau": "ORANJE",
- "tijd": "2026-07-31T01:08:41.514713+02:00",
+ "niveau": "GEEL",
+ "tijd": "2026-07-31T04:54:34.574408+02:00",
  "redenen": [
-  "Satelliet: hotspot op 20.8 km (N, 30-07 14:46)"
+  "Nieuws: brandmeldingen in de regio (departementsniveau)",
+  "Weer verzwaart: windstoten tot 62 km/u verwacht (15:00u)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
