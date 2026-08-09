@@ -1,8 +1,9 @@
 {
- "niveau": "GROEN",
- "tijd": "2026-08-09T10:44:04.265224+02:00",
+ "niveau": "GEEL",
+ "tijd": "2026-08-09T12:35:29.089518+02:00",
  "redenen": [
-  "Geen hotspots binnen 80 km en geen lokale brandberichten in de laatste 48 uur"
+  "Nieuws: brandmeldingen in de regio (departementsniveau)",
+  "Weer verzwaart: windstoten tot 85 km/u verwacht (23:00u)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
