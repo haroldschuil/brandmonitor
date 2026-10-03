@@ -1,8 +1,8 @@
 {
- "niveau": "GROEN",
- "tijd": "2026-10-03T06:14:13.272991+02:00",
+ "niveau": "GEEL",
+ "tijd": "2026-10-03T13:15:09.517560+02:00",
  "redenen": [
-  "Geen hotspots binnen 80 km en geen lokale brandberichten in de laatste 48 uur"
+  "Nieuws: brandmeldingen in de regio (departementsniveau)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
