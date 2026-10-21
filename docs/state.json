@@ -1,9 +1,9 @@
 {
- "niveau": "GEEL",
- "tijd": "2026-10-21T11:10:40.837202+02:00",
+ "niveau": "ORANJE",
+ "tijd": "2026-10-21T16:55:01.078522+02:00",
  "redenen": [
-  "Nieuws: brandmeldingen in de regio (departementsniveau)",
-  "Weer verzwaart: windstoten tot 70 km/u verwacht (15:00u)"
+  "Satelliet: hotspot op 15.8 km (NW, 21-10 14:46)",
+  "Weer verzwaart: windstoten tot 60 km/u verwacht (17:00u)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
