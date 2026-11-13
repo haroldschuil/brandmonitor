@@ -1,9 +1,8 @@
 {
- "niveau": "ROOD",
- "tijd": "2026-11-12T22:20:16.228576+01:00",
+ "niveau": "GEEL",
+ "tijd": "2026-11-13T03:27:20.942347+01:00",
  "redenen": [
-  "Satelliet: hotspot op 12.5 km (NW, 12-11 13:33)",
-  "Weer verzwaart: windstoten tot 62 km/u verwacht (01:00u)"
+  "Nieuws: brandmeldingen in de regio (departementsniveau)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
