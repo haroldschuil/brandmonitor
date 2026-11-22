@@ -1,8 +1,9 @@
 {
- "niveau": "GROEN",
- "tijd": "2026-11-22T10:30:06.408897+01:00",
+ "niveau": "ORANJE",
+ "tijd": "2026-11-22T18:39:10.166695+01:00",
  "redenen": [
-  "Geen hotspots binnen 80 km en geen lokale brandberichten in de laatste 48 uur"
+  "Satelliet: hotspot op 21.5 km (NO, 22-11 13:46)",
+  "Weer verzwaart: windstoten tot 78 km/u verwacht (19:00u)"
  ],
  "mail": "GMAIL_USER/GMAIL_APP_PASSWORD niet gezet: geen mail verstuurd"
 }
